@@ -1,29 +1,35 @@
 <template>
-  <div>
-    <h1>Registration form</h1>
-        <input
-          id="exampleInputEmail1"
-          type="email"
-          class="form-control"
-          v-model="email"
-          aria-describedby="emailHelp"
-          placeholder="Enter email">
-
-        <input
-          type="password"
-          v-model="password"
-          class="form-control"
-          id="exampleInputPassword1"
-          placeholder="Password">
-      <!-- add listener !-->
-      <div class="error" v-html="error" />
-      <br>
-      <button
-      @click="register">
-        register
-        Register</button>
-
-  </div>
+  <v-layout column>
+    <v-flex xs6 offset-xs3>
+      <div class="white elevation-2">
+        <v-toolbar flat dense class="cyan" dark>
+          <v-toolbar-title>Register</v-toolbar-title>
+        </v-toolbar>
+        <div class="pl-4 pr-4 pt-2 pb-2">
+            <input
+              id="exampleInputEmail1"
+              type="email"
+              v-model="email"
+              aria-describedby="emailHelp"
+              placeholder="Enter email">
+            <br>
+            <input
+                type="password"
+                v-model="password"
+                id="exampleInputPassword1"
+                placeholder="Password">
+            <!-- add listener !-->
+            <br>
+            <div class="error" v-html="error" />
+            <br>
+            <v-btn
+              class="cyan"
+              @click="register">
+              Register</v-btn>
+        </div>
+      </div>
+    </v-flex>
+  </v-layout>
 </template>
 
 <!-- our Controller -->
