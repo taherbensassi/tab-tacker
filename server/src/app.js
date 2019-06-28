@@ -25,20 +25,11 @@ app.use(bodyParser.json());
 /** any client to access **/
 app.use(cors());
 
-/**** Get request from the server on my express server **/
-app.get('/status', (req,res) => {
-    res.send({
-        message : `Hallo this first request ! `
-    })
-});
 
 
-/**** post request from the server on my express server **/
-app.post('/register', (req,res) => {
-    res.send({
-        message : `Hallo ${req.body.email} ! your user was registred ! `
-    })
-});
+/*** routes require **/
+require('./routes/routes')(app)
+
 
 
 /** get our projet on squelzei **/
@@ -48,6 +39,7 @@ sequelize.sync()
         console.log(`server started on port ${config.port}` )
 
     })
+
 
 
 
