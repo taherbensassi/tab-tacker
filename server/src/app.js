@@ -15,16 +15,25 @@ const app = express ();
 
 
 /**  printout log  **/
-app.use(morgan('combine'));
+/** log which meth and from what**/
+app.use(morgan('combined'));
 /** Bodyparser allow you to parse json data very easy **/
 app.use(bodyParser.json());
 /** any client to access **/
 app.use(cors());
 
-
+/**** Get request from the server on my express server **/
 app.get('/status', (req,res) => {
     res.send({
-        message : "hallo world"
+        message : `Hallo this first request ! `
+    })
+});
+
+
+/**** post request from the server on my express server **/
+app.post('/register', (req,res) => {
+    res.send({
+        message : `Hallo ${req.body.email} ! your user was registred ! `
     })
 });
 
