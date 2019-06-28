@@ -1,8 +1,6 @@
 <template>
   <div>
     <h1>Registration form</h1>
-
-
         <input
           id="exampleInputEmail1"
           type="email"
