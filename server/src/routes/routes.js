@@ -9,8 +9,6 @@ module.exports = (app) => {
         })
     });
 
-
-
     /**** post request from the server on my express server **/
     app.post('/register',
        AuthenticationController.register
