@@ -9,7 +9,6 @@ const morgan = require ('morgan');
 /** object **/
 const {sequelize} = require ('./models')
 const config = require ('./config/config')
-
 /** web server build **/
 const app = express ();
 
@@ -29,8 +28,6 @@ app.use(cors());
 
 /*** routes require **/
 require('./routes/routes')(app)
-
-
 
 /** get our projet on squelzei **/
 sequelize.sync()
