@@ -8,6 +8,7 @@ const cors = require ('cors');
 const morgan = require ('morgan');
 /** object **/
 const {sequelize} = require ('./models')
+const config = require ('./config/config')
 
 /** web server build **/
 const app = express ();
@@ -41,8 +42,12 @@ app.post('/register', (req,res) => {
 
 
 /** get our projet on squelzei **/
+sequelize.sync()
+    .then(()=> {
+        app.listen(config.port);
+        console.log(`server started on port ${config.port}` )
 
+    })
 
-app.listen(process.env.PORT || 5000);
 
 
