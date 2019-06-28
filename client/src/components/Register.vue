@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Register</h1>
+    <h1>Registration form</h1>
 
     <form>
       <div class="form-group">
@@ -55,7 +55,7 @@ export default {
       const response = await AuthenticationService.register({
         email: this.email,
         password: this.password
-      })
+      });
       console.log(response.data)
     }
   },
