@@ -6,6 +6,8 @@ const bodyParser = require ('body-parser');
 const cors = require ('cors');
 /** reuired cors**/
 const morgan = require ('morgan');
+/** object **/
+const {sequelize} = require ('./models')
 
 /** web server build **/
 const app = express ();
@@ -38,5 +40,9 @@ app.post('/register', (req,res) => {
 });
 
 
+/** get our projet on squelzei **/
+
+
 app.listen(process.env.PORT || 5000);
+
 
